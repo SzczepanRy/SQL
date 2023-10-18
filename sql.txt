@@ -1,0 +1,84 @@
+http://127.0.0.1/phpmyadmin/
+
+
+select [distinct - wartości unkatowe][*] {kol,kol1,kol2...koln] 
+from [nazwa tabli/tabel]
+[where nazwa_kolumny operator szukane_wyrażenie]
+[group by nazwa_kolumny/nazwa_kolumn]
+(order by nawa_kolumny ASC/DESC) (limit X,Y)x - tyle opuść y - tyle wyslij
+
+operator : = > >= < <= <> 
+
+and of not 
+wien > 24 and wiek < 32
+
+
+wiek between 24 and 32
+
+
+SELECT
+    *
+FROM
+    `dane_k`
+WHERE
+    wiek BETWEEN 20 AND 40 AND (nazwa_sieci = "hejka" OR nazwa_sieci = "multi")
+ORDER BY wiek
+    
+
+*
+
+% - dowolny ci ąg znaków
+
+?
+
+_ - 1 dowolny znak
+
+
+Like
+not Like
+
+
+wszystkie kobiety
+
+SELECT
+    *
+FROM
+    `dane_k`
+WHERE
+    wiek BETWEEN 20 AND 40 AND imie like "%a" and (nazwa_sieci = "hejka" OR nazwa_sieci = "multi")
+ORDER BY wiek
+    
+
+
+
+
+
+
+min()- wart min
+max()-wart max
+sum() -sumuje
+avg() -Srednia
+count()-zlicza
+
+
+count("nazwa_kol")
+count(*)
+
+
+SELECT nazwa_sieci ,COUNT(nazwa_sieci) FROM `dane_k` group by  nazwa_sieci
+
+=>
+
+Citrone
+54
+Erka
+66
+Hejka
+70
+Multi
+90
+
+
+SELECT nazwa_sieci ,COUNT(nazwa_sieci) as "moja nazwa" FROM `dane_k` group by  nazwa_sieci
+
+SELECT count(*) as ile FROM `dane_k` WHERE imie like '%a' and wiek between 18 and 30-- ilość w col ile
