@@ -104,3 +104,5 @@ ilosć m i k -- SELECT if(imie like "%a","kobieta","meżczyzna")as plec ,count(i
 
 
 ilosc ludzi w woj -- SELECT count(imie)as num , wojewodztwo FROM `dane_k`,`wojewodztwo` WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj GROUP by wojewodztwo
+
+i wyswietlam 4 SELECT count(imie)as num , wojewodztwo FROM `dane_k`,`wojewodztwo` WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj GROUP by wojewodztwo ORDER by num DESC LIMIT 3,1 
