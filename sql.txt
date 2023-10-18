@@ -5,6 +5,7 @@ select [distinct - wartości unkatowe][*] {kol,kol1,kol2...koln]
 from [nazwa tabli/tabel]
 [where nazwa_kolumny operator szukane_wyrażenie]
 [group by nazwa_kolumny/nazwa_kolumn]
+[having kol_z_obliczeniami operator szukane_wyrażenie]
 (order by nawa_kolumny ASC/DESC) (limit X,Y)x - tyle opuść y - tyle wyslij
 
 operator : = > >= < <= <> 
@@ -82,3 +83,24 @@ Multi
 SELECT nazwa_sieci ,COUNT(nazwa_sieci) as "moja nazwa" FROM `dane_k` group by  nazwa_sieci
 
 SELECT count(*) as ile FROM `dane_k` WHERE imie like '%a' and wiek between 18 and 30-- ilość w col ile
+
+
+
+średnia nazw sieci na wiek userów -- SELECT nazwa_sieci,round(avg(wiek),0) as srednia from `dane_k` GROUP BY nazwa_sieci
+gdziesredni >= 40 -- SELECT nazwa_sieci,round(avg(wiek),0) as srednia from `dane_k` GROUP BY nazwa_sieci having srednia>=40
+
+złączenia tabel -- SELECT nazwisko,imie,wojewodztwo FROM dane_k,wojewodztwo WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj
+
+
+potrujene łączenie -- SELECT nazwisko,imie,wojewodztwo,zainteresowania FROM dane_k,wojewodztwo,zainteresowania WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj and dane_k.Id_k=zainteresowania.Id_k
+
+
+ilość zainteresowanych -- SELECT zainteresowania, count(*) as num FROM `zainteresowania` GROUP by zainteresowania;
+
+ilość zainteresowanych więcej od 30 i jest rortowanie -- SELECT zainteresowania, count(*) as num FROM `zainteresowania` GROUP by zainteresowania HAVING num  >= 30 ORDER by num
+
+
+ilosć m i k -- SELECT if(imie like "%a","kobieta","meżczyzna")as plec ,count(if(imie like "%a","kobieta","meżczyzna"))as num FROM `dane_k` GROUP by plec;
+
+
+ilosc ludzi w woj -- SELECT count(imie)as num , wojewodztwo FROM `dane_k`,`wojewodztwo` WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj GROUP by wojewodztwo
