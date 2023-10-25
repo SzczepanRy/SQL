@@ -106,3 +106,32 @@ ilosć m i k -- SELECT if(imie like "%a","kobieta","meżczyzna")as plec ,count(i
 ilosc ludzi w woj -- SELECT count(imie)as num , wojewodztwo FROM `dane_k`,`wojewodztwo` WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj GROUP by wojewodztwo
 
 i wyswietlam 4 SELECT count(imie)as num , wojewodztwo FROM `dane_k`,`wojewodztwo` WHERE wojewodztwo.symbol_woj=dane_k.symbol_woj GROUP by wojewodztwo ORDER by num DESC LIMIT 3,1 
+
+
+======insert========
+
+isnert into nazwa_tab values(wart1,wart2,...,wart_n)
+
+
+isnert into nazwa_tab(tab1,tab2,tab3) values(wart1,wart2,...,wart_n)
+
+isnert into dane_k (id,imie,nazwisko) values(10,kasia,bomba),(10,pomocy,spomocy) 
+
+
+
+===delete===========
+
+
+
+delete from nazwa_tab WHERE id_k=0  //usuwa tylok wartośc gzie id_k =0
+
+
+==update===
+
+updata nazwa_ta set kol_1=wart1,kol_2=wart2,...
+
+updata nazwa_ta set wiek=wiek-10 where imie like "%a" ///wszystkin kobietom wiek -10
+
+
+update dae_k se nazwa_sicei="abc" where id_k=1 / dla id_k=1 nazwa sieci =="abc"
+
