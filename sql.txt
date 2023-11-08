@@ -134,4 +134,21 @@ updata nazwa_ta set wiek=wiek-10 where imie like "%a" ///wszystkin kobietom wiek
 
 
 update dae_k se nazwa_sicei="abc" where id_k=1 / dla id_k=1 nazwa sieci =="abc"
+====if=====
 
+
+SELECT if(imie like '%a','kobieta',"gosciu" ) from dane_k  - czy kobieta cz meszcyzna 
+
+SELECT if(imie like '%a','kobieta',"gosciu" )as plac, count(imie) from dane_k group by plac - ile kobieta cz meszcyzna 
+
+-----funkcje czas
+now()-data i godzna
+curdate()-data
+year(now())
+day(now())
+month(now())
+
+----funkcje 
+UCase()-na duze
+LCase()-na male
+pi() -wartość pi
