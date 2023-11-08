@@ -1,0 +1,30 @@
+a) Utwórz zapytanie pozwalające obliczyć kwotę pieniędzy potrzebną na wypłatę pensji zasadniczej w każdym mieście. Wyniki uporządkuj rosnąco według kwot pieniędzy. 
+SELECT sum(pensja)as suma , siedziba_dzialu 
+from  pracownicy, dzial 
+WHERE pracownicy.numer_dzialu=dzial.numer_dzialu GROUP BY siedziba_dzialu ORDER by suma
+
+b) Wypisz wszystkich  kierowników. W otrzymanym zestawieniu należy uwzględnić numer działu, nazwę działu, nazwisko i imię kierownika.
+
+SELECT pracownicy.numer_dzialu , nazwa_dzialu , nazwisko , imie , stanowisko
+from  pracownicy, dzial 
+WHERE pracownicy.numer_dzialu=dzial.numer_dzialu && stanowisko="kierownik" GROUP BY siedziba_dzialu
+
+c) Utwórz zapytanie przypisujące każdemu pracownikowi premię zgodnie z tabelą premia. Premię obliczamy jako procent z pensji.
+SELECT   nazwisko , imie , pracownicy.stanowisko , sum(pracownicy.pensja + pracownicy.pensja*procent_premii) as wyplata
+from  pracownicy, premia 
+WHERE pracownicy.stanowisko=premia.stanowisko GROUP by imie
+
+
+d) Utwórz zapytanie pozwalające obliczyć średnią pensję dla kobiet (imiona kobiet kończą się na literę „a”).
+SELECT   AVG(pensja) as srednia
+from  pracownicy
+WHERE pracownicy.imie like '%a'
+e) Policz ilu pracowników pracuje w danym dziale
+
+SELECT nazwa_dzialu, count(imie) as liczba
+from  pracownicy ,dzial
+WHERE pracownicy.numer_dzialu=dzial.numer_dzialu GROUP by dzial.nazwa_dzialu
+f) Oblicz średnią pensję, sumę pensji oraz znajdź pensję najwyższą i najniższą w dziale "Badania". Kolumny w kwerendzie nazwij w następująco: Średnie pensja, suma pensji, max pensja, min pensja.
+SELECT AVG(pensja) as srednia, sum(pensja) as suma ,max(pensja) as maxpensja ,min(pensja) as minpensja
+from  pracownicy ,dzial
+WHERE pracownicy.numer_dzialu=dzial.numer_dzialu && nazwa_dzialu="Badania" GROUP by dzial.nazwa_dzialu
