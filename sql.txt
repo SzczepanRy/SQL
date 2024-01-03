@@ -152,3 +152,36 @@ month(now())
 UCase()-na duze
 LCase()-na male
 pi() -wartość pi
+
+
+left(string,ilaść_znaków)
+right(string,ilaść_znaków)
+
+
+----------------tworzenie tabel
+
+
+create table nazwa_tab
+(
+    nazwa_kol_1 typ_danych [atrybuty],
+    nazwa_kol_2 typ_danych [atrybuty],
+    nazwa_kol_3 typ_danych [atrybuty]
+)
+
+typ_danych:
+
+liczbowe :
+
+Intiger
+Double
+
+data i czas :
+
+date
+time
+timestamp
+
+tekstoy:
+
+text
+varchar(x)
