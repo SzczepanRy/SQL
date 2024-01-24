@@ -1,0 +1,29 @@
+cd C:\xampp\mysql\bin>
+
+mysql -u root -p
+
+show databases;--pokazanie opcji
+
+use dbname; --wchodzenie w db
+
+grants dbname;
+
+*.*; - dostemp d o wzystkich baz danych 
+
+show grants ; - sprawdza uprawnienia
+
+baza.* - wszyskie bazy i babele
+baza.tabela
+
+exit; - wyjscie
+
+grant prawo1,prawo2,prawo3... ON baza.table to uzytkownik;
+
+show grants for 4ic2;
+
+select * from dane_k ;
+
+revoke prawo1,prawo2,prawo3... ON baza.table to uzytkownik;
+
+
+
