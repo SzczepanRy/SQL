@@ -1,0 +1,36 @@
+curl -X GET http://127.0.0.1:5984
+GET-wyswietl
+POST - dodaj
+PUT - tw bazy i aktualizacja
+DELETE - usuwanie
+
+curl -X GET http://127.0.0.1:5984/_all_dbs
+
+tw
+curl -X PUT http://127.0.0.1:5984/[nazwa]
+
+dodawanie doc
+curl -X POST http://127.0.0.1:5984/[nazwa] -H "Content-Type:application/json" -d "{\"klucz\":\"wartość\",\"klucz2\":333}"
+
+-d ()
+-H (nagłówek)
+
+\"klucz\":\"wartosc\"
+
+
+check posts
+curl -X GET http://127.0.0.1:5984/[nazwadb]/_all_docs
+
+check post
+curl -X GET http://127.0.0.1:5984/[nazwadb]/[nazwa id ]
+
+
+update
+curl -X PUT http://127.0.0.1:5984/[nazwa]/[id]  -d "{\"rev\":... ,\"klucz\":\"wartość\",\"nowa\":\"wartość\",\"klucz2\":333}"
+
+
+sort
+
+curl -X PUT http://127.0.0.1:5984/[nazwa]/[id]?revs_[id]
+
+
