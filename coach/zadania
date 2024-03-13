@@ -1,0 +1,47 @@
+
+
+1. Utwórz bazę danych, której nazwą będą Twoje inicjały. 
+curl -X PUT http://127.0.0.1:5984/[nazwa]
+2. Do bazy dodaj dokumenty: 
+
+a.Kategoria:laptop, Producent:HP, procesor:Intel Core i3, RAM:8GB,Cena:1869, Kolor:czarny, id:laptop1 
+
+b.Kategoria:laptop, Producent:ASUS, procesor:Intel Core i5, RAM:8GB,Cena:3 199, id:laptop2 
+
+c.Kategoria:laptop, Producent:Apple, procesor:Intel Core i5, RAM:8GB,Cena:3999,Kolor:bialy, id:laptop3 
+
+d.Kategoria:komputer, Producent:Dell, procesor:Intel Core i5, RAM:8GB,Cena:2869, id:komputer1 
+
+e.Kategoria:komputer, Producent:Dell, procesor:Intel Core i3, RAM:8GB,Cena:2349, id:komputer2 
+
+f.Kategoria:komputer, Producent:HP, procesor:AMD A9, RAM:8GB,Cena:2239, id:komputer3 
+
+3. Wyświetl zawartość bazy 
+curl -X GET http://127.0.0.1:5984/[nazwadb]/_all_docs
+4. Zaktualizuj zawartość dokumentu "laptop2" dodając wpis kolor:Czarny 
+curl -X PUT http://127.0.0.1:5984/[nazwa]/[id]  -d "{\"rev\":... ,\"klucz\":\"wartość\",\"nowa\":\"wartość\",\"klucz2\":333}"
+5. Wyświetl informacje o numerach wersji dokumentu "laptop1"  
+curl -X GET http://127.0.0.1:5984/[nazwadb]/[nazwa id ]
+
+
+6. Wyświetl zawartość dokumentu "laptop2" przed aktualizacją 
+
+===============try graficzny============================================
+
+7. Policz ile jest laptopów a ile komputerów 
+
+8. Wypisz drugi i trzeci najdroższy laptop 
+
+9. Podaj średnią ceną laptopów 
+
+10. Wypisz komputery z przedziału cenowego 2000-2500 
+
+11. Podaj ile jest komputerów oraz laptopów od danego producenta 
+
+12. Wypisz tylko komputery i laptopy w kolorze czarnym 
+
+13. Wypisz tylko komputery i laptopy producenta Dell o procesorze Intel Core i5 
+
+14. Policz ile jest komputerów w procesorem AMD w kolorze czarnym, ile jest komputerów z procesorem Intel Core i3 producenta Dell oraz ile jest komputerów z procesorem Intel Core i5 i pamięci RAM:8GB 
+
+15. Wypisz wszystkie komputery (procesor,RAM, cena) producenta Dell 
