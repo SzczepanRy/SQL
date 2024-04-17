@@ -11,6 +11,9 @@ curl -X PUT http://127.0.0.1:5984/[nazwa]
 
 dodawanie doc
 curl -X POST http://127.0.0.1:5984/[nazwa] -H "Content-Type:application/json" -d "{\"klucz\":\"wartość\",\"klucz2\":333}"
+curl -X POST http://127.0.0.1:5984/[nazwa] -H "Content-Type:application/json" -d "{\"Producent\":\"Samsung\", \"Model\":\"Galaxy S7\", \"RAM\":\"4GB\", \"Ekran\":\"5cali\", \"Dual SIM\":\"Nie\", \"Cena\":\"1398\", \"id\":\"S7\"}"
+ Producent:Samsung, Model:Galaxy S7, RAM:4GB, Ekran:5cali, Dual SIM:Nie, Cena:1398, id:S7
+
 
 -d ()
 -H (nagłówek)
